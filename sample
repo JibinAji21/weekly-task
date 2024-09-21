@@ -1,0 +1,40 @@
+accessories=[]
+while True:
+    print(
+        '''
+        1.Admin
+        2.Customer
+        3.Exit
+        '''
+    )
+    choice=int(input("enter ur choice"))
+    if choice==1:
+        while True:
+            print(
+                '''
+                1.Add accessories
+                2.View
+                3.Update
+                4.Delete
+                5.Search
+                6.View customers
+                7.Exit
+                '''
+                )
+            sub_choice=input("Enter your choice : ")
+            if sub_choice==1:
+                id=int(input("Enter"))
+                name=input("Enter name of accessory : ")
+                brand=input("Enter brand of accessory : ")
+                material=input("Enter accessory material : ")
+                price=int(input("Enter price of accessory : "))
+                stock=int(input("Enter stock of accessories : "))
+                accessories.append({'id':id,'name':name,'brand':brand,'material':material,'price':price,'stock':stock})
+            elif sub_choice==2:
+                print('{:<5}{:<8}{:<8}{:<12}{:<12}{:<12}'.format('id','name','brand','material','price','stock'))
+                print('-'*70)
+                for i in accessories:
+                    print('{:<5}{:<8}{:<8}{:<12}{:<12}{:<12}'.format(i['id'],i['name'],i['brand'],i['material'],i['price'],i['stock']))
+            # elif choice==3:
+
+
