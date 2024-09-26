@@ -203,7 +203,7 @@ while True:
                             i['stock']-=1
                             print("accessory added")
                         else:
-                            print("out of stock")
+                            print("out of stocks")
             elif customer_choice==6:
                 break
     elif choice==3:
