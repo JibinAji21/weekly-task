@@ -74,7 +74,7 @@ while True:
                     elif u_choice==3:
                         for i in accessories:
                             if i['id']==id:
-                                new_price=input("Enter New price : ")
+                                new_price=int(input("Enter New price : "))
                                 i['price']=new_price
                                 f=1
                                 print("updated")
@@ -83,7 +83,7 @@ while True:
                     elif u_choice==4:
                         for i in accessories:
                             if i['id']==id:
-                                new_stock=input("Enter New stock : ")
+                                new_stock=int(input("Enter New stock : "))
                                 i['stock']=new_stock
                                 f=1
                                 print("updated")
@@ -123,11 +123,12 @@ while True:
             print(
                 '''
                 1.Register
-                2.View details
-                3.Update details
-                4.View accessories
-                5.buy accessories
-                6.Exit
+                2.login
+                3.View details
+                4.Update details
+                5.View accessories
+                6.buy accessories
+                7.Exit
                 '''
             )
             customer_choice=int(input("Enter your choice : "))
@@ -141,11 +142,17 @@ while True:
                 c_phone=int(input("Enter your phone number : "))
                 customers.append({'c_id':c_id,'c_name':c_name,'c_place':c_place,'c_phone':c_phone,'accessory':[]})
             elif customer_choice==2:
+                uname=input("enter user name")
+                passw=input("enter password")
+                f=0
+                user=''
+                if uname==''
+            elif customer_choice==3:
                 print('{:<12}{:<12}{:<12}{:<12}'.format('c_id','c_name','c_place','c_phone'))
                 print('-'*70)
                 for i in customers:
                     print('{:<12}{:<12}{:<12}{:<12}'.format(i['c_id'],i['c_name'],i['c_place'],i['c_phone']))
-            elif customer_choice==3:
+            elif customer_choice==4:
                 id=int(input("Enter your id : "))
                 f=0
                 while True:
@@ -187,12 +194,12 @@ while True:
                             print("Invalid id")
                     elif cu_choice==4:
                         break
-            elif customer_choice==4:
+            elif customer_choice==5:
                 print('{:<5}{:<8}{:<8}{:<12}{:<12}{:<12}'.format('id','type','brand','material','price','stock'))
                 print('-'*70)
                 for i in accessories:
                     print('{:<5}{:<8}{:<8}{:<12}{:<12}{:<12}'.format(i['id'],i['type'],i['brand'],i['material'],i['price'],i['stock']))
-            elif customer_choice==5:
+            elif customer_choice==6:
                 id=int(input("Enter accessory id : "))
                 f=0
                 for i in accessories:
@@ -204,7 +211,7 @@ while True:
                             print("accessory added")
                         else:
                             print("out of stocks")
-            elif customer_choice==6:
+            elif customer_choice==7:
                 break
     elif choice==3:
         break
